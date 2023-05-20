@@ -14,7 +14,7 @@
 
 Uma calculadora interativa em JavaScript que registra todos os cálculos feitos desde o primeiro, permitindo que você acompanhe seu histórico de forma prática.
 
-- Preview: [https://gerador-de-senha-lucas.vercel.app](https://gerador-de-senha-lucas.vercel.app)
+- Preview: [https://calculadoralucas.vercel.app](https://calculadoralucas.vercel.app)
 
 ## 🚀 Linguagens
 
