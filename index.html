@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora - by Lucas Lopes</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/jpeg" href="assets/icon.jpg">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="calculator">
+            <div class="footer">
+                <table>
+                    <tr>
+                        <td align="center">
+                            <div class="profile-picture">
+                                <a href="https://github.com/eoLucasS" target="_blank">
+                                    <img src="https://cdn.discordapp.com/attachments/1049167666876776458/1049179325410312292/tdi.png" width="100">
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <sub class="author">
+                                Feito por:
+                                <a href="https://www.linkedin.com/in/lucaslopesdasilva/" target="_blank">Lucas Lopes</a>
+                            </sub>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <input type="text" id="result" readonly>
+            <div class="buttons-row">
+                <button onclick="appendCharacter('7')">7</button>
+                <button onclick="appendCharacter('8')">8</button>
+                <button onclick="appendCharacter('9')">9</button>
+                <button onclick="appendCharacter('/')" class="button-orange">/</button>
+            </div>
+            <div class="buttons-row">
+                <button onclick="appendCharacter('4')">4</button>
+                <button onclick="appendCharacter('5')">5</button>
+                <button onclick="appendCharacter('6')">6</button>
+                <button onclick="appendCharacter('*')" class="button-orange">x</button>
+            </div>
+            <div class="buttons-row">
+                <button onclick="appendCharacter('1')">1</button>
+                <button onclick="appendCharacter('2')">2</button>
+                <button onclick="appendCharacter('3')">3</button>
+                <button onclick="appendCharacter('-')" class="button-orange">-</button>
+            </div>
+            <div class="buttons-row">
+                <button onclick="appendCharacter('0')">0</button>
+                <button onclick="appendCharacter('.')">.</button>
+                <button onclick="deleteLastCharacter()" class="gray-button">&larr;</button>
+                <button onclick="appendCharacter('+')" class="button-orange">+</button>
+            </div>
+            <div class="buttons-row">
+                <button onclick="clearResult()" class="gray-button">C</button>
+                <button onclick="calculateResult()" class="button-orange">=</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="history">
+        <h2>Histórico de Cálculos</h2>
+        <div class="clear-button-container">
+            <button onclick="clearHistory()" class="clear-button">Limpar Histórico</button>
+        </div>
+        <ul id="calc-history"></ul>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
