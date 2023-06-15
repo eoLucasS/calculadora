@@ -1,70 +1,39 @@
+var expression = "";
+var resultField = document.getElementById("result");
+var historyContainer = document.getElementById("historyContainer");
+
+function updateResult(value) {
+    expression += value;
+    resultField.value = expression;
+}
+
 function clearResult() {
-    document.getElementById('result').value = '';
-}
-
-function deleteLastCharacter() {
-    var result = document.getElementById('result').value;
-    document.getElementById('result').value = result.slice(0, -1);
-}
-
-function appendCharacter(character) {
-    document.getElementById('result').value += character;
+    expression = "";
+    resultField.value = "";
 }
 
 function calculateResult() {
-    var result = document.getElementById('result').value;
-    var calculatedResult = eval(result);
-    document.getElementById('result').value = calculatedResult;
+    try {
+        var result = eval(expression);
+        resultField.value = result.toLocaleString("en");
 
-    // Registro do histórico
-    var historyItem = {
-        timestamp: new Date(),
-        calculation: result,
-        result: calculatedResult
-    };
+        var currentDate = new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" });
+        var historyItem = document.createElement("div");
+        historyItem.className = "history-item";
+        historyItem.innerHTML = '<span>' + currentDate + '</span> - <span class="calculation">' + expression + '</span> = ' + result.toLocaleString("en");
+        historyContainer.appendChild(historyItem);
 
-    addToHistory(historyItem);
+        expression = "";
+    } catch (error) {
+        resultField.value = "Erro";
+    }
 }
 
 function clearHistory() {
-    var historyList = document.getElementById('calc-history');
-    historyList.innerHTML = '';
+    historyContainer.innerHTML = "";
 }
 
-function addToHistory(item) {
-    var historyList = document.getElementById('calc-history');
-
-    var li = document.createElement('li');
-
-    var timestamp = document.createElement('div');
-    timestamp.classList.add('timestamp');
-    timestamp.textContent = getFormattedTimestamp(item.timestamp);
-
-    var calculation = document.createElement('div');
-    calculation.classList.add('calculation');
-    calculation.textContent = item.calculation;
-
-    var result = document.createElement('div');
-    result.classList.add('result');
-    result.textContent = item.result;
-
-    li.appendChild(timestamp);
-    li.appendChild(calculation);
-    li.appendChild(result);
-
-    historyList.appendChild(li);
-}
-
-function getFormattedTimestamp(timestamp) {
-    var options = {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-        timeZone: 'America/Sao_Paulo'
-    };
-
-    return timestamp.toLocaleString('pt-BR', options);
+function removeLastCharacter() {
+    expression = expression.slice(0, -1);
+    resultField.value = expression;
 }
