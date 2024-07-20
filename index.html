@@ -1,51 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Calculadora</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" type="image/jpg" href="assets/icon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Style Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <div class="calculator">
-            <textarea id="result" readonly></textarea>
-            <div class="row">
-                <input type="button" value="1" onclick="updateResult(1)">
-                <input type="button" value="2" onclick="updateResult(2)">
-                <input type="button" value="3" onclick="updateResult(3)">
-                <input type="button" value="+" onclick="updateResult('+')">
-            </div>
-            <div class="row">
-                <input type="button" value="4" onclick="updateResult(4)">
-                <input type="button" value="5" onclick="updateResult(5)">
-                <input type="button" value="6" onclick="updateResult(6)">
-                <input type="button" value="-" onclick="updateResult('-')">
-            </div>
-            <div class="row">
-                <input type="button" value="7" onclick="updateResult(7)">
-                <input type="button" value="8" onclick="updateResult(8)">
-                <input type="button" value="9" onclick="updateResult(9)">
-                <input type="button" value="*" onclick="updateResult('*')">
-            </div>
-            <div class="row">
-                <input type="button" value="0" onclick="updateResult(0)">
-                <input type="button" value="C" onclick="clearResult()">
-                <input type="button" value="=" onclick="calculateResult()">
-                <input type="button" value="/" onclick="updateResult('/')">
-            </div>
-            <div class="row">
-                <input type="button" value="←" onclick="removeLastCharacter()">
-            </div>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="display" disabled>
         </div>
+        <div class="buttons">
+            <button class="btn btn-clear" onclick="clearDisplay()">AC</button>
+            <button class="btn btn-sign" onclick="toggleSign()">±</button>
+            <button class="btn btn-percent" onclick="percent()">%</button>
+            <button class="btn btn-operator" onclick="inputOperator('/')">÷</button>
 
-        <div class="history-container">
-            <div id="historyContainer"></div>
-            <div class="history-controls">
-                <button onclick="clearHistory()">Limpar Histórico</button>
-            </div>
+            <button class="btn btn-number" onclick="inputNumber('7')">7</button>
+            <button class="btn btn-number" onclick="inputNumber('8')">8</button>
+            <button class="btn btn-number" onclick="inputNumber('9')">9</button>
+            <button class="btn btn-operator" onclick="inputOperator('*')">×</button>
+
+            <button class="btn btn-number" onclick="inputNumber('4')">4</button>
+            <button class="btn btn-number" onclick="inputNumber('5')">5</button>
+            <button class="btn btn-number" onclick="inputNumber('6')">6</button>
+            <button class="btn btn-operator" onclick="inputOperator('-')">−</button>
+
+            <button class="btn btn-number" onclick="inputNumber('1')">1</button>
+            <button class="btn btn-number" onclick="inputNumber('2')">2</button>
+            <button class="btn btn-number" onclick="inputNumber('3')">3</button>
+            <button class="btn btn-operator" onclick="inputOperator('+')">+</button>
+
+            <button class="btn btn-zero" onclick="inputNumber('0')">0</button>
+            <button class="btn btn-number" onclick="inputNumber('.')">.</button>
+            <button class="btn btn-equal" onclick="calculate()">=</button>
         </div>
     </div>
-
+    <div id="author-info">
+        <div class="author-box">
+            <img class="author-image" src="assets/foto_autor.jpg" alt="Foto do Autor">
+            <span class="author-name">Lucas Lopes da Silva</span>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
