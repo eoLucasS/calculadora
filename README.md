@@ -23,7 +23,7 @@ $$$$$$$$\\$$$$$$  |\$$$$$$$\\$$$$$$$ |$$$$$$$  |      $$$$$$$$\\$$$$$$  |$$$$$$$
                                                                          \__|
 -->
 <h1 align="center">
-  Pong Game <img width="25px" src="https://raw.githubusercontent.com/eoLucasS/portfolio/main/assets/img/icon.svg"/>
+  Calculadora <img width="25px" src="https://raw.githubusercontent.com/eoLucasS/portfolio/main/assets/img/icon.svg"/>
 </h1>
 
 <p align="center">
